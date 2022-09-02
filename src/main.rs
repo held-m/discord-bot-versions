@@ -9,6 +9,7 @@
 //! features = ["framework", "standard_framework"]
 //! ```
 mod commands;
+mod parsers;
 
 use std::collections::HashSet;
 use std::env;
