@@ -1,6 +1,6 @@
 //! Requires the 'framework' feature flag be enabled in your project's
 //! `Cargo.toml`.
-//!
+//! 
 //! This can be enabled by specifying the feature in the dependency section:
 //!
 //! ```toml
@@ -8,6 +8,7 @@
 //! git = "https://github.com/serenity-rs/serenity.git"
 //! features = ["framework", "standard_framework"]
 //! ```
+//! action
 mod commands;
 mod parsers;
 
