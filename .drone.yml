@@ -8,26 +8,26 @@ steps:
     image: rust:1.65
     commands:
       - cargo test
-    settings:
-      when:
-        branch: main 
+    when:
+      branch:
+        - main 
   
   - name: build
     image: rust:1.65
     commands:
       - cargo build --release
-    settings:
-      when:
-        event: tag
+    when:
+      event:
+        - tag
   
   - name: publish
     image: plugins/github-release
     settings:
       api_key:
         from_secret: github
-      files: target/release/discord-bot-version
+      files: /drone/src/target/release/discord-bot-version
       checksum:
         - sha512
-      when:
-        event: tag
-
+    when:
+      event:
+        - tag
