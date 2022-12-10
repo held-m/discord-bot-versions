@@ -4,13 +4,13 @@ type: docker
 name: discord-bot-version
 steps:
   
-  # - name: test
-  #   image: rust:1.65
-  #   commands:
-  #     - cargo test
-  #   settings:
-  #     when:
-  #       event: tag
+  - name: test
+    image: rust:1.65
+    commands:
+      - cargo test
+    settings:
+      when:
+        branch: main 
   
   - name: build
     image: rust:1.65
@@ -30,6 +30,4 @@ steps:
         - sha512
       when:
         event: tag
-# trigger:
-#   branch:
-#   - main
+
