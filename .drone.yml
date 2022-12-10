@@ -4,22 +4,32 @@ type: docker
 name: discord-bot-version
 steps:
   
-  - name: test
+  # - name: test
+  #   image: rust:1.65
+  #   commands:
+  #     - cargo test
+  #   settings:
+  #     when:
+  #       event: tag
+  
+  - name: build
     image: rust:1.65
     commands:
-      - cargo test
       - cargo build --release
+    settings:
+      when:
+        event: tag
   
   - name: publish
     image: plugins/github-release
     settings:
       api_key:
         from_secret: github
-      files: bin/*
+      files: target/release/discord-bot-version
       checksum:
         - sha512
       when:
         event: tag
-trigger:
-  branch:
-  - main
+# trigger:
+#   branch:
+#   - main
