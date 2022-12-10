@@ -25,7 +25,7 @@ steps:
     settings:
       api_key:
         from_secret: github
-      files: /drone/src/target/release/discord-bot-version
+      files: /drone/src/target/release/discord-bot-versions
       checksum:
         - sha512
     when:
