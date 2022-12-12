@@ -29,7 +29,7 @@ use tracing::{error, info};
 use crate::commands::math::*;
 use crate::commands::owner::*;
 use crate::commands::ping::*;
-use crate::commands::release::*;
+use crate::commands::v::*;
 
 pub struct ShardManagerContainer;
 

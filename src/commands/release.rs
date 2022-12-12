@@ -6,7 +6,7 @@ use serenity::prelude::*;
 use super::super::parsers::{go, rust};
 
 #[command]
-pub async fn release(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
+pub async fn v(ctx: &Context, msg: &Message, mut args: Args) -> CommandResult {
     let lang_input = args.single::<String>().unwrap_or("".to_string());
 
     if lang_input != "" {
