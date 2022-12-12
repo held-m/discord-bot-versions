@@ -16,6 +16,8 @@ steps:
     image: rust:1.65
     commands:
       - cargo build --release
+    depends_on:
+      - test
     when:
       event:
         - tag
@@ -28,6 +30,9 @@ steps:
       files: /drone/src/target/release/discord-bot-versions
       checksum:
         - sha512
+    depends_on:
+      - test
+      - build
     when:
       event:
         - tag
